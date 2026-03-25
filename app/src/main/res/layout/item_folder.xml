@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardBackgroundColor="#1E1E1E"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Aspect Ratio Spacer -->
+        <View
+            android:id="@+id/aspectRatioSpacer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- 2x2 Grid of Album Art -->
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:columnCount="2"
+            android:rowCount="2"
+            app:layout_constraintTop_toTopOf="@id/aspectRatioSpacer"
+            app:layout_constraintBottom_toBottomOf="@id/aspectRatioSpacer"
+            app:layout_constraintStart_toStartOf="@id/aspectRatioSpacer"
+            app:layout_constraintEnd_toEndOf="@id/aspectRatioSpacer">
+
+            <ImageView
+                android:id="@+id/ivArt1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:scaleType="centerCrop"
+                android:src="@android:drawable/ic_menu_report_image" />
+
+            <ImageView
+                android:id="@+id/ivArt2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:scaleType="centerCrop"
+                android:src="@android:drawable/ic_menu_report_image" />
+
+            <ImageView
+                android:id="@+id/ivArt3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:scaleType="centerCrop"
+                android:src="@android:drawable/ic_menu_report_image" />
+
+            <ImageView
+                android:id="@+id/ivArt4"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:scaleType="centerCrop"
+                android:src="@android:drawable/ic_menu_report_image" />
+        </GridLayout>
+
+        <!-- Folder Name Overlay -->
+        <View
+            android:id="@+id/overlay"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:background="#AA000000"
+            app:layout_constraintBottom_toBottomOf="@id/aspectRatioSpacer"
+            app:layout_constraintStart_toStartOf="@id/aspectRatioSpacer"
+            app:layout_constraintEnd_toEndOf="@id/aspectRatioSpacer" />
+
+        <TextView
+            android:id="@+id/tvFolderName"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:paddingHorizontal="4dp"
+            android:text="Folder Name"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:maxLines="2"
+            android:ellipsize="end"
+            app:layout_constraintBottom_toBottomOf="@id/aspectRatioSpacer"
+            app:layout_constraintStart_toStartOf="@id/aspectRatioSpacer"
+            app:layout_constraintEnd_toEndOf="@id/aspectRatioSpacer" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

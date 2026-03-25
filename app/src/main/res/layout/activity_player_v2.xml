@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:padding="24dp"
+    tools:context=".PlayerActivity">
+
+    <!-- Header -->
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_menu_revert"
+        android:contentDescription="Back"
+        app:tint="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPlayerLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NOW PLAYING"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:letterSpacing="0.1"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/btnBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnBack" />
+
+    <ImageButton
+        android:id="@+id/btnVolume"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_lock_silent_mode_off"
+        android:contentDescription="Volume"
+        app:tint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Album Art with Glow -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/albumArtCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="24dp"
+        app:cardBackgroundColor="#1E1E1E"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="20dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnBack">
+
+        <ImageView
+            android:id="@+id/ivPlayerAlbumArt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@android:drawable/ic_menu_report_image" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- Song Info -->
+    <TextView
+        android:id="@+id/tvPlayerTitle"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:lines="1"
+        android:text="Midnight City Lights"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:autoSizeMaxTextSize="22sp"
+        app:autoSizeMinTextSize="14sp"
+        app:autoSizeStepGranularity="1sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintTop_toBottomOf="@id/albumArtCard" />
+
+    <TextView
+        android:id="@+id/tvPlayerArtist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:gravity="center"
+        android:text="THE STARLIGHT COLLECTIVE"
+        android:textColor="#BDBDBD"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/tvPlayerTitle" />
+
+    <!-- Badges Row -->
+    <LinearLayout
+        android:id="@+id/badgesRow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPlayerArtist">
+
+        <TextView
+            android:id="@+id/btnAudioInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_info_capsule"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="4dp"
+            android:text="AUDIO INFO"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvHiResBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_hires_badge"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="2dp"
+            android:text="HI-RES"
+            android:textColor="#000000"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Utility Panel (Glassmorphic) -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/utilityPanel"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_glass_card"
+        android:paddingHorizontal="16dp"
+        app:layout_constraintTop_toBottomOf="@id/badgesRow">
+
+        <TextView
+            android:id="@+id/tvPlaybackSpeed"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="1.0x"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnSleepTimer" />
+
+        <ImageButton
+            android:id="@+id/btnSleepTimer"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_recent_history"
+            app:tint="#FFFFFF"
+            app:layout_constraintStart_toEndOf="@id/tvPlaybackSpeed"
+            app:layout_constraintEnd_toStartOf="@id/btnEqualizer" />
+
+        <ImageButton
+            android:id="@+id/btnEqualizer"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_preferences"
+            app:tint="#FFFFFF"
+            app:layout_constraintStart_toEndOf="@id/btnSleepTimer"
+            app:layout_constraintEnd_toStartOf="@id/btnOpenQueue" />
+
+        <ImageButton
+            android:id="@+id/btnOpenQueue"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_sort_by_size"
+            app:tint="#FFFFFF"
+            app:layout_constraintStart_toEndOf="@id/btnEqualizer"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Seeker -->
+    <SeekBar
+        android:id="@+id/playerSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:paddingHorizontal="0dp"
+        android:progressTint="#FFFFFF"
+        android:thumbTint="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/utilityPanel" />
+
+    <TextView
+        android:id="@+id/tvCurrentTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="1:45"
+        android:textColor="#BDBDBD"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/playerSeekBar"
+        app:layout_constraintTop_toBottomOf="@id/playerSeekBar" />
+
+    <TextView
+        android:id="@+id/tvTotalTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="4:30"
+        android:textColor="#BDBDBD"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/playerSeekBar"
+        app:layout_constraintTop_toBottomOf="@id/playerSeekBar" />
+
+    <!-- Controls -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/controlsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCurrentTime">
+
+        <ImageButton
+            android:id="@+id/btnPlayerPrev"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_glass_card"
+            android:src="@android:drawable/ic_media_previous"
+            app:tint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnPlayerPlayPause"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btnPlayerPlayPause"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:layout_marginHorizontal="24dp"
+            android:background="@drawable/bg_glass_card"
+            android:padding="20dp"
+            android:scaleType="fitCenter"
+            android:src="@android:drawable/ic_media_play"
+            app:tint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnPlayerNext"
+            app:layout_constraintStart_toEndOf="@id/btnPlayerPrev"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btnPlayerNext"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_glass_card"
+            android:src="@android:drawable/ic_media_next"
+            app:tint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnPlayerPlayPause"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

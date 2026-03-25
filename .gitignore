@@ -1,0 +1,41 @@
+# Android
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+/app/build
+*.apk
+*.aar
+
+# NDK
+obj/
+libs/
+
+# Proprietary
+/plan/
+/scripts/
+/app/src/main/cpp/engine/*
+/app/src/main/cpp/native-lib.cpp
+/app/src/main/cpp/include/
+/app/src/main/java/com/example/first/usb/DeviceQuirkManager.kt
+/app/src/main/jniLibs/
+
+# Local Workspace & Logs
+behaviour.txt
+todo.txt
+build_log.txt
+sdk_path.txt
+commits.txt
+*.log
+*.final_log.txt
+*.test.txt

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Matches USB Audio Class devices only.
+    class="1" = USB Audio Class (UAC1 + UAC2 DACs, headphone amps, etc.)
+    Devices that report class=0 at device level but audio in interfaces
+    are handled by probeDevice() scanning interface classes in UsbHelper.
+-->
+<resources>
+    <!--
+        Match USB Audio Class devices (class=1).
+        This causes Android to offer HyperAudio as a handler when a USB DAC is connected.
+    -->
+    <usb-device class="1" />
+</resources>

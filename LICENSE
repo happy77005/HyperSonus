@@ -1,0 +1,12 @@
+PROPRIETARY LICENSE
+
+Copyright (c) 2026 HyperSonus. All Rights Reserved.
+
+Free to use but no distribution and no code copying. 
+All rights reserved.
+
+The following components are strictly proprietary and may not be redistributed or copied in any form:
+- All C++ Header files (.h)
+- JNI Layer implementation (native-lib.cpp)
+- USB Device Quirk Manager
+- Project Architecture Plans (plan/ folder)
