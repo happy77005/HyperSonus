@@ -107,7 +107,8 @@ HyperSonus is built upon the incredible work of the open-source community. We gr
 - **[libsoxr](https://sourceforge.net/projects/soxr/)**: The SoX Resampler library, providing high-quality sample rate conversion.
 - **[libFLAC](https://xiph.org/flac/)**: The reference implementation for the Free Lossless Audio Codec.
 - **[bs2b](https://bs2b.sourceforge.net/)**: The Bauer Stereophonic-to-Binaural library for fatigue-free headphone listening.
-- **[Resonance Audio](https://resonance-audio.github.io/resonance-audio/)**: Google's high-fidelity spatial audio SDK.
+- **Resonance Audio**: Google's high-fidelity spatial audio SDK.
+- **[Shibata](https://github.com/shibatch/SSRC)**: High-order noise-shaping dithering algorithm used for high-fidelity bit-depth conversion.
 
 ## 🔐 License & Proprietary Status
 
